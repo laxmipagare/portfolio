@@ -831,14 +831,18 @@
 						</div>
 						<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
 							<div class="col-md-12">
-								<p class="work-menu"><span><a href="#" class="active">Graphic Design</a></span> <span><a
-											href="#">Web Design</a></span> <span><a href="#">Software</a></span>
-									<span><a href="#">Apps</a></span>
+								<p class="work-menu">
+									<span><a href="javascript:void(0);" class="active tablinks"
+											onclick="openTab(event, 'codeigniter')">Codeigniter</a></span>
+									<span><a href="javascript:void(0);" class="tablinks"
+											onclick="openTab(event, 'laravel')">Laravel</a></span>
+									<!-- <span><a href="#">e</a></span>
+									<span><a href="#">Apps</a></span> -->
 								</p>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+							<div class="col-md-6 animate-box tabcontent codeigniter" data-animate-effect="fadeInLeft">
 								<div class="project" style="background-image: url(images/img-1.jpg);">
 									<div class="desc">
 										<div class="con">
@@ -853,7 +857,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+							<div class="col-md-6 animate-box tabcontent codeigniter" data-animate-effect="fadeInRight">
 								<div class="project" style="background-image: url(images/img-2.jpg);">
 									<div class="desc">
 										<div class="con">
@@ -868,7 +872,8 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInTop">
+							<div class="col-md-6 animate-box tabcontent laravel" data-animate-effect="fadeInTop"
+								style="display: none;">
 								<div class="project" style="background-image: url(images/img-3.jpg);">
 									<div class="desc">
 										<div class="con">
@@ -883,7 +888,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
+							<div class="col-md-6 animate-box" data-animate-effect="fadeInBottom" style="display: none;">
 								<div class="project" style="background-image: url(images/img-4.jpg);">
 									<div class="desc">
 										<div class="con">
@@ -898,7 +903,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft" style="display: none;">
 								<div class="project" style="background-image: url(images/img-5.jpg);">
 									<div class="desc">
 										<div class="con">
@@ -913,7 +918,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+							<div class="col-md-6 animate-box" data-animate-effect="fadeInRight" style="display: none;">
 								<div class="project" style="background-image: url(images/img-6.jpg);">
 									<div class="desc">
 										<div class="con">
@@ -1091,6 +1096,35 @@
 
 	<!-- MAIN JS -->
 	<script src="js/main.js"></script>
+
+	<script>
+		function openTab(evt, tabName) {
+
+			// Hide all tabcontent
+			var allTabs = document.getElementsByClassName('tabcontent');
+
+			for (var i = 0; i < allTabs.length; i++) {
+				allTabs[i].style.display = "none";
+			}
+
+			// Show selected tab group
+			var selectedTabs = document.getElementsByClassName(tabName);
+			//alert(selectedTabs.length);
+			for (var j = 0; j < selectedTabs.length; j++) {
+				selectedTabs[j].style.display = "block";
+			}
+
+			// Remove active class from all links
+			var links = document.getElementsByClassName('tablinks');
+			for (var k = 0; k < links.length; k++) {
+				links[k].classList.remove("active");
+			}
+
+			// Add active class to current clicked link
+			evt.currentTarget.classList.add("active");
+		}
+	</script>
+
 
 </body>
 
